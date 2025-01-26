@@ -26,7 +26,7 @@ Before starting, ensure you have the following installed:
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/Badal2456/MySQL-Python-Docker-Integration.git
 cd your-repo-name
 ```
 
