@@ -26,7 +26,7 @@ Before starting, ensure you have the following installed:
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/Badal2456/MySQL-Python-Docker-Integration.git
+git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
 ```
 
@@ -40,6 +40,32 @@ docker pull mysql
 ```
 
 This command downloads the MySQL image, which we'll use to create the MySQL container.
+
+**Optional:** If you want to write the Python code yourself instead of using the provided code, create a Python file (e.g., `demo_sql.py`) with the following structure:
+
+```python
+import mysql.connector
+
+def create_connection():
+    connection = mysql.connector.connect(
+        host="mysql_container_ip",
+        user="root",
+        password="root",
+        database="userinfo"
+    )
+    return connection
+
+def main():
+    connection = create_connection()
+    cursor = connection.cursor()
+    cursor.execute("CREATE TABLE IF NOT EXISTS usernames (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255))")
+    print("Connected to MySQL and ensured table exists!")
+
+if __name__ == "__main__":
+    main()
+```
+
+This simple script connects to the MySQL container and ensures a table named `usernames` exists.
 
 ---
 
